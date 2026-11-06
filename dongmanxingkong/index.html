@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>动漫星空官网-动漫星空官网在线追番_动漫星空官网新番动漫资源</title>
+<meta name="description" content="动漫星空官网首页入口，汇集新番连载、经典补番与番剧分类浏览，提供清晰的追番列表与热门推荐，方便快速找到想看的动漫作品。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1030'/%3E%3Cpath d='M40 14a18 18 0 1 0 10 16 14 14 0 0 1-10-16z' fill='%237cf1ff'/%3E%3Ccircle cx='22' cy='20' r='2.6' fill='%23ffd166'/%3E%3Ccircle cx='17' cy='31' r='1.8' fill='%23ffd166'/%3E%3Ccircle cx='45' cy='46' r='2' fill='%23ff9ec7'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#eaf0ff;
+  --ink-soft:#a9b4d6;
+  --bg:#080c1c;
+  --bg-2:#0e1430;
+  --card:#121a3a;
+  --line:rgba(140,165,255,.16);
+  --cyan:#7cf1ff;
+  --pink:#ff9ec7;
+  --gold:#ffd166;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(124,241,255,.14), transparent 60%),
+    radial-gradient(800px 460px at 92% 4%, rgba(255,158,199,.12), transparent 62%),
+    linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 46%,var(--bg) 100%);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,92vw);margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.16em;color:var(--cyan);
+  border:1px solid var(--line);border-radius:999px;padding:5px 14px;
+  background:rgba(124,241,255,.06);
+}
+h1,h2,h3{line-height:1.3;margin:0}
+.section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(20px,2.6vw,27px);letter-spacing:.02em}
+.sec-head p{margin:6px 0 0;color:var(--ink-soft);font-size:14px;max-width:52ch}
+.sec-tag{font-size:12px;color:var(--pink);letter-spacing:.14em;margin-bottom:8px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(14px);
+  background:rgba(8,12,28,.78);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:.02em;white-space:nowrap}
+.brand svg{width:30px;height:30px;flex:none}
+.brand span{background:linear-gradient(92deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.nav-links a{
+  font-size:14px;color:var(--ink-soft);padding:7px 12px;border-radius:999px;
+  transition:.2s;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);background:rgba(124,241,255,.1);outline:none}
+.nav-cta{
+  font-size:13px;padding:8px 16px;border-radius:999px;
+  background:linear-gradient(92deg,rgba(124,241,255,.9),rgba(255,158,199,.9));
+  color:#0a0f22;font-weight:700;
+}
+
+/* hero */
+.hero{padding:58px 0 44px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:.01em;margin:16px 0 14px}
+.hero h1 em{font-style:normal;background:linear-gradient(92deg,var(--cyan),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:var(--ink-soft);font-size:15.5px;max-width:46ch;margin:0 0 22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;padding:11px 22px;border-radius:999px;
+  border:1px solid var(--line);color:var(--ink);
+  transition:.2s;
+}
+.btn-primary{background:linear-gradient(92deg,#7cf1ff,#ff9ec7);color:#0a0f22;border-color:transparent}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost:hover{background:rgba(124,241,255,.1)}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stats div{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em}
+.hero-stats strong{display:block;font-size:20px;color:var(--ink);font-weight:700;letter-spacing:0}
+
+/* hero visual */
+.hero-art{
+  position:relative;border-radius:24px;border:1px solid var(--line);
+  background:radial-gradient(circle at 70% 20%, rgba(124,241,255,.16), transparent 62%),linear-gradient(160deg,#0d1433,#170f2e);
+  padding:22px;min-height:300px;display:flex;align-items:center;justify-content:center;
+}
+.hero-art svg{width:100%;height:auto;display:block}
+.art-badge{
+  position:absolute;bottom:16px;left:16px;right:16px;
+  display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--ink-soft);
+}
+.art-badge span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:rgba(8,12,28,.6)}
+
+/* cards */
+.grid{display:grid;gap:18px}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.g-2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:linear-gradient(170deg,rgba(18,26,58,.92),rgba(13,19,42,.86));
+  border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+}
+.card h3{font-size:16.5px;margin-bottom:8px}
+.card p{margin:0;color:var(--ink-soft);font-size:14px}
+.card .num{
+  font-size:12px;color:var(--cyan);letter-spacing:.14em;margin-bottom:12px;display:block;
+}
+
+/* anime list */
+.anime-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.anime{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:linear-gradient(170deg,rgba(18,26,58,.9),rgba(13,19,42,.85));
+  display:flex;flex-direction:column;transition:.24s;
+}
+.anime:hover{transform:translateY(-3px);border-color:rgba(124,241,255,.4)}
+.anime-cover{height:120px;display:flex;align-items:center;justify-content:center;position:relative}
+.anime-cover svg{width:76px;height:76px}
+.anime-body{padding:16px 18px 18px}
+.anime-body h3{font-size:15.5px;margin-bottom:4px}
+.anime-body .meta{font-size:12.5px;color:var(--cyan);letter-spacing:.06em;margin-bottom:8px}
+.anime-body p{font-size:13.5px;color:var(--ink-soft);margin:0}
+.tag{display:inline-block;font-size:11.5px;color:var(--gold);border:1px solid rgba(255,209,102,.3);border-radius:999px;padding:2px 10px;margin-top:12px}
+
+/* filter */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{
+  font-size:13px;padding:7px 16px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line);background:transparent;color:var(--ink-soft);
+  font-family:inherit;transition:.2s;
+}
+.chip:hover{color:var(--ink);border-color:rgba(124,241,255,.4)}
+.chip.active{background:rgba(124,241,255,.14);color:var(--cyan);border-color:rgba(124,241,255,.5)}
+.anime[hidden]{display:none}
+
+/* schedule */
+.sched{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.sched div{
+  border:1px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center;
+  background:rgba(18,26,58,.6);
+}
+.sched strong{display:block;font-size:13px;color:var(--cyan);margin-bottom:6px}
+.sched span{font-size:12px;color:var(--ink-soft);line-height:1.5;display:block}
+
+/* note */
+.note{
+  border-left:2px solid var(--pink);padding:4px 0 4px 18px;color:var(--ink-soft);font-size:14px;
+}
+.note strong{color:var(--ink)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:34px 0 40px;margin-top:20px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot p{margin:6px 0 0;font-size:13px;color:var(--ink-soft);max-width:52ch}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft)}
+.foot-links a:hover{color:var(--cyan)}
+.copy{margin-top:22px;font-size:12px;color:#6f7ba0;letter-spacing:.02em}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-art{min-height:auto}
+  .g-3,.anime-list{grid-template-columns:repeat(2,1fr)}
+  .sched{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:620px){
+  .nav{flex-wrap:wrap;gap:10px}
+  .nav-links{order:3;width:100%;overflow-x:auto;padding-bottom:4px}
+  .nav-links a{padding:6px 10px}
+  .hero{padding:36px 0 28px}
+  .section{padding:38px 0}
+  .g-3,.g-2,.anime-list{grid-template-columns:1fr}
+  .sched{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:18px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="动漫星空官网首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0b1030"/>
+        <path d="M40 14a18 18 0 1 0 10 16 14 14 0 0 1-10-16z" fill="#7cf1ff"/>
+        <circle cx="22" cy="20" r="2.6" fill="#ffd166"/>
+        <circle cx="17" cy="31" r="1.8" fill="#ffd166"/>
+        <circle cx="45" cy="46" r="2" fill="#ff9ec7"/>
+        <circle cx="30" cy="50" r="1.4" fill="#ff9ec7"/>
+      </svg>
+      <span>动漫星空官网</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#new">新番连载</a>
+      <a href="#library">番剧分类</a>
+      <a href="#schedule">更新节奏</a>
+      <a href="#about">站点说明</a>
+    </nav>
+    <a class="nav-cta" href="#new">开始追番</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">动漫星空官网 · 追番入口</span>
+        <h1>动漫星空官网</h1>
+        <p class="lead">这里是动漫星空官网的首页入口。以新番连载为主线，配合番剧分类、更新节奏与补番推荐，把想看的作品集中在一处，减少翻找时间，直接进入观看与追番列表。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#new">浏览新番连载</a>
+          <a class="btn btn-ghost" href="#library">按分类找番</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>新番</strong>当季连载更新</div>
+          <div><strong>分类</strong>题材与年份筛选</div>
+          <div><strong>补番</strong>完结作品回顾</div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg viewBox="0 0 320 240" role="img" aria-label="星空下的放映与追番主题插画">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#101a40"/>
+              <stop offset="1" stop-color="#1b1030"/>
+            </linearGradient>
+            <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7cf1ff" stop-opacity=".85"/>
+              <stop offset="1" stop-color="#ff9ec7" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="320" height="240" rx="18" fill="url(#sky)"/>
+          <circle cx="248" cy="52" r="22" fill="#7cf1ff" opacity=".18"/>
+          <path d="M248 30a22 22 0 1 0 12 20 17 17 0 0 1-12-20z" fill="#7cf1ff" opacity=".8"/>
+          <circle cx="56" cy="40" r="2.4" fill="#ffd166"/>
+          <circle cx="92" cy="26" r="1.6" fill="#fff" opacity=".7"/>
+          <circle cx="130" cy="46" r="1.8" fill="#fff" opacity=".55"/>
+          <circle cx="180" cy="28" r="1.4" fill="#ff9ec7"/>
+          <circle cx="286" cy="96" r="1.6" fill="#ffd166"/>
+          <rect x="52" y="86" width="216" height="104" rx="12" fill="#0a1030" stroke="#7cf1ff" stroke-opacity=".35"/>
+          <rect x="64" y="98" width="192" height="80" rx="8" fill="url(#screen)" opacity=".22"/>
+          <path d="M150 120l34 18-34 18z" fill="#7cf1ff"/>
+          <rect x="130" y="190" width="60" height="6" rx="3" fill="#7cf1ff" opacity=".5"/>
+          <circle cx="86" cy="212" r="3" fill="#ff9ec7"/>
+          <circle cx="110" cy="220" r="2" fill="#ffd166"/>
+          <circle cx="232" cy="214" r="2.6" fill="#7cf1ff"/>
+        </svg>
+        <div class="art-badge">
+          <span>当季新番</span>
+          <span>连载更新</span>
+          <span>完结补番</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">NEW ANIME</div>
+          <h2>新番连载：本季正在更新的作品</h2>
+          <p>新番区按更新节奏排列，打开动漫星空官网后先看这里，能快速判断本周有哪些作品上线，再决定追更顺序。</p>
+        </div>
+        <a class="btn btn-ghost" href="#library">查看全部分类</a>
+      </div>
+
+      <div class="anime-list">
+        <article class="anime">
+          <div class="anime-cover" style="background:linear-gradient(135deg,rgba(124,241,255,.16),rgba(255,158,199,.12))">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="18" fill="none" stroke="#7cf1ff" stroke-width="2.4"/>
+              <path d="M27 24l16 8-16 8z" fill="#7cf1ff"/>
+            </svg>
+          </div>
+          <div class="anime-body">
+            <div class="meta">周一 · 奇幻冒险</div>
+            <h3>星轨旅人</h3>
+            <p>少年沿星轨寻找失落故乡，每集推进一段旅程，适合喜欢世界观铺陈的观众。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+
+        <article class="anime">
+          <div class="anime-cover" style="background:linear-gradient(135deg,rgba(255,209,102,.16),rgba(255,158,199,.12))">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="16" y="18" width="32" height="28" rx="6" fill="none" stroke="#ffd166" stroke-width="2.4"/>
+              <circle cx="26" cy="30" r="2.4" fill="#ffd166"/>
+              <circle cx="38" cy="30" r="2.4" fill="#ffd166"/>
+              <path d="M26 38h12" stroke="#ffd166" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="anime-body">
+            <div class="meta">周三 · 校园日常</div>
+            <h3>午后社团室</h3>
+            <p>五人社团在放学后的琐碎日常，节奏轻快，单集独立，适合碎片时间观看。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+
+        <article class="anime">
+          <div class="anime-cover" style="background:linear-gradient(135deg,rgba(255,158,199,.16),rgba(124,241,255,.1))">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 44l12-22 8 14 6-9 10 17z" fill="none" stroke="#ff9ec7" stroke-width="2.4" stroke-linejoin="round"/>
+              <circle cx="46" cy="18" r="4" fill="#ff9ec7"/>
+            </svg>
+          </div>
+          <div class="anime-body">
+            <div class="meta">周五 · 热血战斗</div>
+            <h3>赤刃之约</h3>
+            <p>双主角对峙与并肩的成长线，战斗分镜密集，更新后讨论度较高的一档。</p>
+            <span class="tag">连载中</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">LIBRARY</div>
+          <h2>番剧分类：按题材与状态筛选</h2>
+          <p>分类区把作品按题材与连载状态归并。点击下方标签即可筛选列表，方便在动漫星空官网里挑出符合当下心情的一部。</p>
+        </div>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="番剧筛选">
+        <button class="chip active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="fantasy" type="button">奇幻冒险</button>
+        <button class="chip" data-filter="daily" type="button">校园日常</button>
+        <button class="chip" data-filter="action" type="button">热血战斗</button>
+        <button class="chip" data-filter="done" type="button">已完结</button>
+      </div>
+
+      <div class="anime-list" id="filterList">
+        <article class="anime" data-cat="fantasy">
+          <div class="anime-body">
+            <div class="meta">奇幻冒险 · 连载中</div>
+            <h3>星轨旅人</h3>
+            <p>以星图为线索的公路式叙事，设定完整，适合从第一集连续看下去。</p>
+          </div>
+        </article>
+        <article class="anime" data-cat="daily">
+          <div class="anime-body">
+            <div class="meta">校园日常 · 连载中</div>
+            <h3>午后社团室</h3>
+            <p>轻喜剧结构，单集独立成篇，不追更也能随时接上进度。</p>
+          </div>
+        </article>
+        <article class="anime" data-cat="action">
+          <div class="anime-body">
+            <div class="meta">热血战斗 · 连载中</div>
+            <h3>赤刃之约</h3>
+            <p>主角团逐集解锁能力，战斗与情感线并行，适合喜欢紧凑节奏的观众。</p>
+          </div>
+        </article>
+        <article class="anime" data-cat="fantasy done">
+          <div class="anime-body">
+            <div class="meta">奇幻冒险 · 已完结</div>
+            <h3>雾海灯塔</h3>
+            <p>十二集完结，结局收束完整，适合周末一次性补完的短篇作品。</p>
+          </div>
+        </article>
+        <article class="anime" data-cat="daily done">
+          <div class="anime-body">
+            <div class="meta">校园日常 · 已完结</div>
+            <h3>四季便当</h3>
+            <p>以季节饮食串联的日常群像，节奏平缓，适合作为睡前轻松补番。</p>
+          </div>
+        </article>
+        <article class="anime" data-cat="action done">
+          <div class="anime-body">
+            <div class="meta">热血战斗 · 已完结</div>
+            <h3>长夜拳歌</h3>
+            <p>格斗题材，主线清晰，完结后口碑稳定，适合喜欢硬派风格的观众。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="schedule">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">SCHEDULE</div>
+          <h2>更新节奏：一周追番安排</h2>
+          <p>把当季作品按星期分散，避免同一天堆积。下表为示例排期，具体更新时间以作品页显示为准。</p>
+        </div>
+      </div>
+      <div class="sched">
+        <div><strong>周一</strong><span>星轨旅人</span></div>
+        <div><strong>周二</strong><span>雾海灯塔</span></div>
+        <div><strong>周三</strong><span>午后社团室</span></div>
+        <div><strong>周四</strong><span>四季便当</span></div>
+        <div><strong>周五</strong><span>赤刃之约</span></div>
+        <div><strong>周六</strong><span>长夜拳歌</span></div>
+        <div><strong>周日</strong><span>补番回顾</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">ABOUT</div>
+          <h2>怎么用动漫星空官网更省时间</h2>
+          <p>三条使用习惯，帮助新访客快速建立自己的追番路径。</p>
+        </div>
+      </div>
+      <div class="grid g-3">
+        <div class="card">
+          <span class="num">01 / 先看新番</span>
+          <h3>当季优先</h3>
+          <p>先在动漫星空官网的新番区确认本周更新，再对照更新节奏表安排观看顺序，避免反复翻页。</p>
+        </div>
+        <div class="card">
+          <span class="num">02 / 再用分类</span>
+          <h3>按题材筛选</h3>
+          <p>心情不确定时，用分类标签过滤题材与连载状态，已完结作品更适合想一次看完的访客。</p>
+        </div>
+        <div class="card">
+          <span class="num">03 / 最后补番</span>
+          <h3>完结回看</h3>
+          <p>把已完结作品集中到周末，配合短篇与长篇交错，追番与补番两条线互不打扰。</p>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:28px">
+        <strong>说明：</strong>本站为动漫星空官网的首页展示页，页面中的作品名称与排期用于示例展示，具体可用内容与更新时间以站点实际页面为准。下载入口暂未开放，待正式地址确认后替换。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand" style="margin-bottom:4px">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0b1030"/>
+            <path d="M40 14a18 18 0 1 0 10 16 14 14 0 0 1-10-16z" fill="#7cf1ff"/>
+            <circle cx="22" cy="20" r="2.6" fill="#ffd166"/>
+            <circle cx="45" cy="46" r="2" fill="#ff9ec7"/>
+          </svg>
+          <span>动漫星空官网</span>
+        </div>
+        <p>动漫星空官网首页入口，围绕新番连载、番剧分类与更新节奏组织内容，为追番与补番提供清晰路径。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#new">新番连载</a>
+        <a href="#library">番剧分类</a>
+        <a href="#schedule">更新节奏</a>
+        <a href="#about">站点说明</a>
+        <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.6">下载</a>
+      </div>
+    </div>
+    <div class="copy">© 动漫星空官网 · 页面内容以示例方式呈现，实际信息以站点页面为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var items = document.querySelectorAll('#filterList .anime');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      items.forEach(function(item){
+        var cats = (item.getAttribute('data-cat') || '').split(/\s+/);
+        item.hidden = !(f === 'all' || cats.indexOf(f) !== -1);
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+                           </html>
