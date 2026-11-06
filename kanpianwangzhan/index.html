@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看片网站免费-免费看片网站在线观看_看片网站免费高清资源</title>
+<meta name="description" content="看片网站免费提供免费在线观看的电影、剧集与动漫资源入口，按类型、地区与热度分类浏览，无需注册即可找到想看的内容，并说明免费看片网站的使用与选择要点。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101828'/%3E%3Cpath d='M26 20l18 12-18 12z' fill='%23ff5a36'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12141c;
+  --ink-2:#39404f;
+  --muted:#6b7385;
+  --line:#e6e8ef;
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#ff5a36;
+  --accent-deep:#e2431f;
+  --navy:#101828;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(16,24,40,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.head-inner{display:flex;align-items:center;gap:24px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:18px;letter-spacing:.3px;white-space:nowrap}
+.logo .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#ff5a36,#ff8a5b);display:grid;place-items:center;flex:none}
+nav.main{margin-left:auto;display:flex;gap:22px;font-size:14.5px;color:#c9cfdd}
+nav.main a{padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:#fff;border-bottom-color:var(--accent)}
+.head-cta{
+  flex:none;background:var(--accent);color:#fff;font-size:14px;font-weight:600;
+  padding:8px 16px;border-radius:999px;
+}
+.head-cta:hover{background:var(--accent-deep)}
+.menu-toggle{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:6px 10px;font-size:14px}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 340px at 82% -10%,rgba(255,90,54,.28),transparent 65%),
+    linear-gradient(160deg,#101828 0%,#182238 62%,#1d2a3f 100%);
+  color:#fff;
+  padding:56px 0 48px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#ffb9a6;background:rgba(255,90,54,.12);border:1px solid rgba(255,90,54,.35);padding:4px 12px;border-radius:999px}
+h1{
+  font-size:clamp(26px,3.4vw,40px);
+  line-height:1.28;
+  margin:16px 0 14px;
+  letter-spacing:.5px;
+  font-weight:800;
+}
+.hero p.lead{color:#c6cddd;font-size:15.5px;margin:0 0 22px;max-width:36em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.btn-ghost:hover{background:rgba(255,255,255,.16)}
+.btn[aria-disabled="true"]{pointer-events:none;opacity:.85}
+.hero-note{margin-top:18px;font-size:13px;color:#98a2b8}
+.hero-art{
+  border-radius:18px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);padding:16px;
+}
+.hero-art .screen{border-radius:12px;overflow:hidden;background:#0b1120}
+.hero-art .caps{display:flex;gap:8px;margin-top:12px}
+.hero-art .caps span{height:6px;border-radius:3px;background:rgba(255,255,255,.22);flex:1}
+.hero-art .caps span:first-child{background:var(--accent);flex:2}
+
+/* stats strip */
+.strip{background:#fff;border-bottom:1px solid var(--line)}
+.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px 0}
+.stat{text-align:center;padding:4px 8px;border-right:1px dashed var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:19px;color:var(--navy)}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:44px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:22px;margin:0 0 4px;letter-spacing:.3px}
+.sec-head p{margin:0;color:var(--muted);font-size:14px}
+.sec-link{font-size:14px;color:var(--accent-deep);font-weight:600;white-space:nowrap}
+
+/* filter */
+.filter{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;margin-bottom:22px;
+}
+.filter input[type="search"]{
+  flex:1 1 220px;min-width:0;padding:9px 13px;border:1px solid var(--line);
+  border-radius:9px;font-size:14.5px;font-family:inherit;color:var(--ink);background:#fbfcfe;
+}
+.filter input[type="search"]:focus{outline:2px solid rgba(255,90,54,.35);border-color:var(--accent)}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--ink-2);
+  padding:7px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;font-family:inherit;
+}
+.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip:hover{border-color:var(--accent);color:var(--accent-deep)}
+.chip.active:hover{color:#fff}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,24,40,.09)}
+.card .thumb{position:relative;background:#0d1526;aspect-ratio:16/9}
+.card .thumb svg{width:100%;height:100%}
+.card .tag{
+  position:absolute;left:10px;top:10px;background:rgba(255,90,54,.92);color:#fff;
+  font-size:12px;padding:2px 9px;border-radius:6px;letter-spacing:.3px;
+}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:16px;margin:0;line-height:1.45}
+.card .meta{font-size:12.5px;color:var(--muted)}
+.card p{margin:2px 0 0;font-size:13.5px;color:var(--ink-2);line-height:1.65}
+.card .go{margin-top:auto;padding-top:10px;font-size:13.5px;font-weight:600;color:var(--accent-deep)}
+.empty{display:none;text-align:center;color:var(--muted);font-size:14px;padding:26px 0}
+
+/* how-to list */
+.guide{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{
+  counter-increment:s;position:relative;padding:0 0 18px 44px;
+  border-left:2px solid var(--line);margin-left:16px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  content:counter(s);position:absolute;left:-17px;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:14px;font-weight:700;display:grid;place-items:center;
+}
+.steps h3{font-size:15.5px;margin:4px 0 4px}
+.steps p{margin:0;font-size:14px;color:var(--ink-2)}
+.tips{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.tips h3{font-size:16px;margin:0 0 10px}
+.tips ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+.tips li{margin-bottom:8px}
+.tips li:last-child{margin-bottom:0}
+
+/* faq */
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-bottom:12px}
+.faq-item h3{font-size:15.5px;margin:0 0 6px}
+.faq-item p{margin:0;font-size:14px;color:var(--ink-2)}
+
+/* footer */
+footer.site{background:var(--navy);color:#a9b2c6;padding:36px 0 26px;font-size:13.5px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.foot-grid h4{color:#fff;font-size:14.5px;margin:0 0 10px;font-weight:600}
+.foot-grid p{margin:0 0 10px;line-height:1.8}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li{margin-bottom:7px}
+.foot-grid a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#7f899e}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .guide-grid{grid-template-columns:1fr;gap:26px}
+  .strip-inner{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  body{font-size:15.5px}
+  nav.main{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:#101828;flex-direction:column;gap:0;padding:8px 20px 16px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  nav.main.open{display:flex}
+  nav.main a{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .head-cta{display:none}
+  .menu-toggle{display:block}
+  .hero{padding:36px 0 34px}
+  .cards{grid-template-columns:1fr}
+  .sec-head h2{font-size:19px}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:34px 0}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="看片网站免费 首页">
+      <span class="mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7z" fill="#fff"/></svg>
+      </span>
+      看片网站免费
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainnav">菜单</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#pick">免费片单</a>
+      <a href="#howto">观看流程</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">站点说明</a>
+    </nav>
+    <a class="head-cta" href="#pick">开始找片</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">在线观影 · 免注册浏览</span>
+        <h1>看片网站免费</h1>
+        <p class="lead">这里把免费看片网站的常见用法讲清楚：按类型与地区挑片，先看简介和时长，再决定是否进入播放页。页面内容以分类索引和选择建议为主，帮助你在众多免费看片网站里少走弯路。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pick">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#fff"/></svg>
+            浏览免费片单
+          </a>
+          <a class="btn btn-ghost" href="#howto">了解观看流程</a>
+        </div>
+        <p class="hero-note">提示：本站为内容索引与说明页，影片资源以各站点实际提供为准。</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 236" role="img" aria-label="播放界面示意">
+          <rect width="420" height="236" rx="12" fill="#0b1120"/>
+          <rect x="0" y="0" width="420" height="150" fill="#111c33"/>
+          <circle cx="210" cy="75" r="30" fill="rgba(255,90,54,.9)"/>
+          <path d="M201 62l22 13-22 13z" fill="#fff"/>
+          <rect x="24" y="168" width="150" height="10" rx="5" fill="rgba(255,255,255,.25)"/>
+          <rect x="24" y="190" width="96" height="8" rx="4" fill="rgba(255,255,255,.14)"/>
+          <rect x="300" y="166" width="96" height="34" rx="8" fill="rgba(255,90,54,.18)" stroke="rgba(255,90,54,.5)"/>
+          <rect x="316" y="178" width="64" height="9" rx="4" fill="rgba(255,255,255,.4)"/>
+        </svg>
+        <div class="caps"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="stat"><b>4 类</b><span>电影 / 剧集 / 动漫 / 纪录</span></div>
+      <div class="stat"><b>免注册</b><span>浏览分类无需账号</span></div>
+      <div class="stat"><b>多线路</b><span>清晰度按站点提供</span></div>
+      <div class="stat"><b>按需筛选</b><span>关键词与类型组合</span></div>
+    </div>
+  </div>
+
+  <!-- PICKS -->
+  <section id="pick">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>免费片单分类</h2>
+          <p>先按类型缩小范围，再用关键词检索片名或题材，点开卡片可查看简介要点。</p>
+        </div>
+        <a class="sec-link" href="#howto">怎么挑更省时间 →</a>
+      </div>
+
+      <div class="filter" role="search">
+        <input id="q" type="search" placeholder="搜索片名、题材，例如：悬疑、动画、2023" aria-label="搜索片名或题材">
+        <button class="chip active" type="button" data-cat="all">全部</button>
+        <button class="chip" type="button" data-cat="电影">电影</button>
+        <button class="chip" type="button" data-cat="剧集">剧集</button>
+        <button class="chip" type="button" data-cat="动漫">动漫</button>
+        <button class="chip" type="button" data-cat="纪录">纪录</button>
+      </div>
+
+      <div class="cards" id="cards">
+
+        <article class="card" data-cat="电影" data-key="迷雾追踪 悬疑 犯罪 城市 调查">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#152036"/><circle cx="240" cy="46" r="26" fill="rgba(255,90,54,.35)"/><path d="M0 140l70-42 60 34 66-52 84 60v40H0z" fill="#1d2c48"/></svg>
+            <span class="tag">电影</span>
+          </div>
+          <div class="body">
+            <h3>迷雾追踪</h3>
+            <div class="meta">悬疑 · 犯罪 · 约 112 分钟</div>
+            <p>城市连环案件牵出旧日线索，节奏偏慢，适合喜欢推理与人物关系的观众。建议先看简介确认基调。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="剧集" data-key="长夜电台 都市 情感 群像 单元">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#1a2436"/><rect x="40" y="60" width="120" height="70" rx="8" fill="#243450"/><rect x="176" y="40" width="104" height="110" rx="8" fill="#2c3f60"/><circle cx="92" cy="95" r="16" fill="rgba(255,90,54,.7)"/></svg>
+            <span class="tag">剧集</span>
+          </div>
+          <div class="body">
+            <h3>长夜电台</h3>
+            <div class="meta">都市 · 情感 · 单元剧 · 单集约 45 分钟</div>
+            <p>以深夜电台为线索串起不同人物故事，单集独立，适合碎片时间观看，从任意一集进入都不影响理解。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="动漫" data-key="山海小旅 动画 治愈 冒险 短篇">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#122a2e"/><circle cx="86" cy="58" r="30" fill="rgba(255,200,90,.5)"/><path d="M0 150q60-48 120-16t200-30v76H0z" fill="#1c4a48"/></svg>
+            <span class="tag">动漫</span>
+          </div>
+          <div class="body">
+            <h3>山海小旅</h3>
+            <div class="meta">治愈 · 冒险 · 短篇合集</div>
+            <p>轻量叙事配手绘风格，每集讲述一段旅程。画风干净，适合放松观看，也适合亲子共看。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="纪录" data-key="城市切片 纪录 人文 城市 观察">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#1b1b26"/><rect x="30" y="90" width="34" height="70" fill="#2f3348"/><rect x="78" y="60" width="34" height="100" fill="#3a4059"/><rect x="126" y="104" width="34" height="56" fill="#2f3348"/><rect x="174" y="44" width="34" height="116" fill="#454c68"/><rect x="222" y="88" width="34" height="72" fill="#2f3348"/></svg>
+            <span class="tag">纪录</span>
+          </div>
+          <div class="body">
+            <h3>城市切片</h3>
+            <div class="meta">人文 · 城市观察 · 系列纪录</div>
+            <p>用镜头记录普通人的日常作息与街巷变化，信息密度不高但耐看，适合想安静看片的时候。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="电影" data-key="远岸来信 剧情 家庭 小镇 书信">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#18263a"/><path d="M0 110q80-36 160 0t160-10v80H0z" fill="#22385a"/><circle cx="252" cy="44" r="20" fill="rgba(255,255,255,.7)"/></svg>
+            <span class="tag">电影</span>
+          </div>
+          <div class="body">
+            <h3>远岸来信</h3>
+            <div class="meta">剧情 · 家庭 · 约 98 分钟</div>
+            <p>小城家庭因一封旧信重新聚拢，叙事平缓，靠表演推动。适合喜欢生活流剧情的观众。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="剧集" data-key="夜航日志 科幻 悬疑 太空 连续剧">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#0f1a2c"/><circle cx="160" cy="90" r="46" fill="none" stroke="rgba(120,170,255,.5)" stroke-width="2"/><circle cx="160" cy="90" r="20" fill="rgba(255,90,54,.75)"/><circle cx="240" cy="40" r="3" fill="#fff"/><circle cx="70" cy="130" r="2" fill="#fff"/></svg>
+            <span class="tag">剧集</span>
+          </div>
+          <div class="body">
+            <h3>夜航日志</h3>
+            <div class="meta">科幻 · 悬疑 · 连续剧 · 需按顺序观看</div>
+            <p>太空船上的记录体叙事，线索跨集埋设，建议从第一集开始连续观看，中途跳集会丢失关键信息。</p>
+            <a class="go" href="#howto">查看观看建议 →</a>
+          </div>
+        </article>
+
+      </div>
+      <p class="empty" id="empty">没有匹配的片目，换个关键词或点击「全部」再看看。</p>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section class="guide" id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>在免费看片网站上找片的四步</h2>
+          <p>把「随便点开」换成有顺序的挑选，通常能明显减少试错时间。</p>
+        </div>
+      </div>
+      <div class="guide-grid">
+        <ol class="steps">
+          <li>
+            <h3>先定类型，再定片名</h3>
+            <p>多数免费看片网站的分类页比搜索页更好用。先确定今晚想看的是电影还是剧集，能过滤掉一大半不相关内容。</p>
+          </li>
+          <li>
+            <h3>看简介与时长，别只看标题</h3>
+            <p>标题相近的片子很多。先读两行简介、确认片长与年份，再判断是否投入时间，尤其是连续剧要留意总集数。</p>
+          </li>
+          <li>
+            <h3>留意清晰度与线路标注</h3>
+            <p>免费站点常提供多条线路，清晰度与加载速度会有差别。进入播放页前先看标注，遇到卡顿可切换其他线路。</p>
+          </li>
+          <li>
+            <h3>收藏固定入口，减少重复检索</h3>
+            <p>把常用分类页放进浏览器书签，比每次重新搜索更快。同一部剧的更新进度也建议记录在本地清单里。</p>
+          </li>
+        </ol>
+        <aside class="tips">
+          <h3>选择免费看片网站时值得留意的几点</h3>
+          <ul>
+            <li>页面是否写明内容来源与更新状态，含糊其辞的站点要谨慎。</li>
+            <li>是否强制注册或要求填写手机号，正规免费观影入口通常不以此为前提。</li>
+            <li>弹窗与跳转数量。频繁跳转往往影响观看，也可能带来风险链接。</li>
+            <li>清晰度选项是否透明，标称「高清」却无法切换的站点体验较差。</li>
+            <li>在公共网络下尽量避免输入任何账号信息，观影本身不需要这些。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>围绕免费看片网站的高频疑问，答案尽量给出可执行的处理方式。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>看片网站免费是否意味着完全不用付费？</h3>
+        <p>「免费」通常指浏览与观看不收取订阅费用，但不同站点的具体做法不一：有的靠广告维持，有的提供免费与付费并行的档位。访问前看清页面上的说明，比默认全部免费更稳妥。</p>
+      </div>
+      <div class="faq-item">
+        <h3>为什么同一部片在不同免费看片网站上清晰度不同？</h3>
+        <p>片源转码参数、带宽与线路数量都会影响画质。多数站点会给出标清、高清等选项，若默认画质偏低，可在播放器内手动切换，或换一条线路再试。</p>
+      </div>
+      <div class="faq-item">
+        <h3>剧集应该按什么顺序看？</h3>
+        <p>连续剧按集数顺序观看最稳妥，尤其是线索跨集推进的作品；单元剧则可以从任意一集进入。片单卡片中的「需按顺序观看」标注就是为此设置的提示。</p>
+      </div>
+      <div class="faq-item">
+        <h3>手机上看免费看片网站要注意什么？</h3>
+        <p>优先使用横屏以获得更好画幅，注意流量消耗，长剧集建议在 Wi-Fi 下观看。若页面频繁跳转，可开启浏览器的拦截弹窗功能，仍无效则换用其他入口。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>关于本站与片单说明</h2>
+          <p>把一个「看片网站免费」的入口页做成可读的分类索引，而不是堆满跳转链接。</p>
+        </div>
+      </div>
+      <p style="max-width:52em;color:var(--ink-2);margin:0 0 14px">本站以整理免费看片网站的使用方法与分类信息为主，片单中的片名、类型与时长用于说明挑选逻辑，实际可观看状态取决于对应站点。我们不托管视频文件，也不对第三方站点的内容与广告负责。若你更习惯按题材找片，可以从上方的类型筛选开始；若只想快速了解流程，阅读「找片的四步」即可。</p>
+      <p style="max-width:52em;color:var(--ink-2);margin:0 0 14px">对于希望长期使用免费看片网站的人，建议建立自己的片单习惯：记录看过的片名、标注是否看完、保存常用分类入口。这样即使换了站点，也能较快找回进度。页面中的筛选框与类型按钮均可直接使用，输入片名关键词即可实时过滤卡片。</p>
+      <a class="btn btn-primary" href="#pick" style="margin-top:6px">回到免费片单</a>
+      <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="margin-top:6px;background:#fff;color:var(--navy);border:1px solid var(--line)">下载片单清单</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>看片网站免费</h4>
+        <p>一个围绕免费在线观影的分类索引与使用说明页，帮助你按类型、关键词和观看顺序更高效地找到想看的内容。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#pick">免费片单分类</a></li>
+          <li><a href="#howto">找片的四步</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#about">站点说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li>影片资源以各站点实际提供为准</li>
+          <li>浏览分类无需注册账号</li>
+          <li>公共网络下勿填写个人信息</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>看片网站免费 · 内容索引与观影说明</span>
+      <span>本站不存储视频文件</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cards .card'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var empty = document.getElementById('empty');
+  var cat = 'all';
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var okCat = (cat === 'all') || (c.getAttribute('data-cat') === cat);
+      var key = (c.getAttribute('data-key') || '').toLowerCase();
+      var title = (c.querySelector('h3').textContent || '').toLowerCase();
+      var okKw = !kw || key.indexOf(kw) > -1 || title.indexOf(kw) > -1;
+      var vis = okCat && okKw;
+      c.style.display = vis ? '' : 'none';
+      if(vis) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      cat = b.getAttribute('data-cat');
+      apply();
+    });
+  });
+
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('mainnav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
