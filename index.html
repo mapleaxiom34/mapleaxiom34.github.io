@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>泰剧网-泰剧在线观看_泰剧网新剧推荐与追剧导航</title>
+<meta name="description" content="泰剧网为泰剧爱好者提供泰剧在线观看入口、新剧推荐与追剧导航，按题材与热度梳理泰剧剧目，帮助观众快速找到想看的泰剧并规划追剧顺序。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2a4a'/%3E%3Cpath d='M22 18h20a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4z' fill='%23f2b544'/%3E%3Cpath d='M28 26l12 6-12 6z' fill='%231b2a4a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1b2a4a;
+  --ink-soft:#3c4a66;
+  --gold:#f2b544;
+  --gold-deep:#d99a1f;
+  --cream:#fdf8ee;
+  --line:#e6dcc8;
+  --teal:#2f7d76;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{margin:0;line-height:1.35;}
+p{margin:0 0 1em;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+/* header */
+.site-head{
+  background:var(--ink);
+  color:#fff;
+  position:sticky;top:0;z-index:20;
+  border-bottom:3px solid var(--gold);
+}
+.head-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 22px;max-width:1120px;margin:0 auto;
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px;}
+.logo svg{display:block;flex:none;}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  padding:6px 12px;border-radius:999px;font-size:14.5px;color:#e8e2d4;
+  transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(242,181,68,.18);color:#fff;outline:none;}
+.nav a.cta{background:var(--gold);color:var(--ink);font-weight:700;}
+.nav a.cta:hover{background:#ffc95c;}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(242,181,68,.28),transparent 42%),
+    radial-gradient(circle at 6% 92%,rgba(47,125,118,.30),transparent 46%),
+    var(--ink);
+  color:#fff;
+  padding:56px 0 60px;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.eyebrow{
+  display:inline-block;font-size:13px;letter-spacing:2px;
+  color:var(--gold);border:1px solid rgba(242,181,68,.5);
+  padding:3px 12px;border-radius:999px;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(30px,4.6vw,46px);font-weight:900;letter-spacing:1px;}
+.hero h1 .dot{color:var(--gold);}
+.hero-sub{color:#cfd6e4;margin-top:14px;max-width:34em;font-size:16px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:10px;font-weight:700;font-size:15px;
+  transition:transform .15s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:var(--gold);color:var(--ink);}
+.btn-primary:hover{background:#ffc95c;transform:translateY(-1px);}
+.btn-ghost{border:1px solid rgba(255,255,255,.42);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,.10);}
+.btn[aria-disabled="true"]{opacity:.72;cursor:not-allowed;}
+.hero-art{display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:340px;height:auto;}
+
+/* sections */
+section{padding:52px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-kicker{font-size:13px;letter-spacing:2px;color:var(--teal);font-weight:700;}
+.sec-title{font-size:clamp(22px,3vw,28px);font-weight:800;margin-top:6px;}
+.sec-desc{color:var(--ink-soft);margin-top:10px;max-width:46em;}
+
+/* quick picks */
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.pick{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:22px 20px;display:flex;flex-direction:column;gap:8px;
+  transition:box-shadow .2s,transform .2s;
+}
+.pick:hover{box-shadow:0 10px 26px rgba(27,42,74,.10);transform:translateY(-3px);}
+.pick-tag{
+  align-self:flex-start;font-size:12px;font-weight:700;color:var(--ink);
+  background:#fbeccb;border-radius:6px;padding:2px 9px;
+}
+.pick h3{font-size:17.5px;font-weight:800;}
+.pick p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+.pick .meta{font-size:12.5px;color:#8a8375;margin-top:4px;}
+
+/* browse / filter */
+.tools{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  margin-bottom:22px;
+}
+.tools label{font-size:14px;font-weight:700;color:var(--ink-soft);}
+.tools input[type="search"]{
+  flex:1 1 220px;min-width:0;padding:10px 14px;border:1px solid var(--line);
+  border-radius:9px;font-size:15px;font-family:inherit;background:var(--cream);color:var(--ink);
+}
+.tools input[type="search"]:focus{outline:2px solid rgba(47,125,118,.45);outline-offset:1px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  border:1px solid var(--line);background:var(--cream);color:var(--ink-soft);
+  padding:7px 15px;border-radius:999px;font-size:14px;cursor:pointer;
+  font-family:inherit;transition:all .18s;
+}
+.chip:hover{border-color:var(--teal);color:var(--teal);}
+.chip.active{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700;}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.item{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;display:flex;gap:14px;
+}
+.item-mark{
+  flex:none;width:42px;height:42px;border-radius:10px;background:#f4ecd9;
+  display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--gold-deep);
+  font-size:15px;
+}
+.item h3{font-size:16.5px;font-weight:800;}
+.item p{font-size:14px;color:var(--ink-soft);margin:4px 0 0;}
+.item .meta{font-size:12.5px;color:#8a8375;margin-top:6px;}
+.empty{
+  grid-column:1/-1;text-align:center;color:var(--ink-soft);
+  padding:30px 10px;background:var(--white);border:1px dashed var(--line);border-radius:12px;
+  font-size:15px;
+}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.guide{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:24px 22px;border-top:4px solid var(--gold);
+}
+.guide h3{font-size:17px;font-weight:800;margin-bottom:8px;}
+.guide p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+.guide .step{font-size:12.5px;letter-spacing:1px;color:var(--teal);font-weight:700;}
+
+/* prose */
+.prose-box{
+  background:var(--white);border:1px solid var(--line);border-radius:16px;
+  padding:32px clamp(20px,4vw,44px);
+}
+.prose-box h2{font-size:clamp(21px,2.8vw,26px);font-weight:800;margin-bottom:14px;}
+.prose-box h3{font-size:17px;font-weight:800;margin:22px 0 8px;color:var(--ink);}
+.prose-box p{color:var(--ink-soft);}
+.prose-box ul{margin:0 0 1em;padding-left:1.2em;color:var(--ink-soft);}
+.prose-box li{margin-bottom:6px;}
+
+/* footer */
+.site-foot{
+  background:var(--ink);color:#c9d2e2;padding:36px 0 28px;margin-top:12px;
+  border-top:3px solid var(--gold);
+}
+.foot-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{font-weight:800;color:#fff;font-size:18px;display:flex;align-items:center;gap:9px;}
+.foot-note{font-size:13.5px;line-height:1.9;max-width:38em;margin-top:10px;}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;}
+.foot-links a{color:#c9d2e2;border-bottom:1px solid transparent;padding-bottom:1px;}
+.foot-links a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.copyright{font-size:13px;color:#8f9bb2;margin-top:22px;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .hero-art{order:-1;justify-content:flex-start;}
+  .hero-art svg{max-width:200px;}
+  .picks,.guide-grid{grid-template-columns:1fr 1fr;}
+  .list{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .head-inner{padding:12px 16px;}
+  .nav{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+  .nav a{white-space:nowrap;}
+  .hero{padding:38px 0 44px;}
+  .picks,.guide-grid{grid-template-columns:1fr;}
+  section{padding:40px 0;}
+  .prose-box{padding:24px 18px;}
+  .btn{padding:11px 18px;font-size:14.5px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="logo" href="#top" aria-label="泰剧网 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#f2b544"/>
+        <path d="M24 18h16a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4z" fill="#1b2a4a"/>
+        <path d="M29 26l11 6-11 6z" fill="#f2b544"/>
+      </svg>
+      <span>泰剧网</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#picks">新剧精选</a>
+      <a href="#browse">剧集分类</a>
+      <a href="#guide">追剧路径</a>
+      <a href="#about">关于本站</a>
+      <a class="cta" href="#browse">开始找剧</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">泰剧观看入口 · 追剧导航</span>
+        <h1>泰剧网</h1>
+        <p class="hero-sub">把想看的泰剧先找出来。泰剧网按题材、热度与播出节奏整理泰剧入口，方便你从一部剧开始，顺着演员与类型继续往下看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#browse">浏览泰剧分类</a>
+          <a class="btn btn-ghost" href="#picks">查看新剧精选</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 260" role="presentation">
+          <rect x="16" y="24" width="288" height="180" rx="18" fill="#24365c" stroke="#3d5480" stroke-width="2"/>
+          <rect x="38" y="46" width="244" height="106" rx="8" fill="#16233f"/>
+          <circle cx="160" cy="99" r="30" fill="#f2b544" opacity=".92"/>
+          <path d="M150 84l24 15-24 15z" fill="#16233f"/>
+          <rect x="38" y="166" width="96" height="9" rx="4.5" fill="#3d5480"/>
+          <rect x="146" y="166" width="60" height="9" rx="4.5" fill="#2f7d76"/>
+          <rect x="218" y="166" width="64" height="9" rx="4.5" fill="#3d5480"/>
+          <rect x="70" y="214" width="180" height="14" rx="7" fill="#1b2a4a" stroke="#3d5480"/>
+          <circle cx="264" cy="40" r="9" fill="#2f7d76"/>
+          <circle cx="52" cy="204" r="6" fill="#f2b544"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">新剧精选</div>
+        <h2 class="sec-title">近期值得留意的泰剧方向</h2>
+        <p class="sec-desc">泰剧网的精选不按单一热度排序，而是先给出类型与看点，让你判断是否符合口味，再决定是否加入追剧清单。</p>
+      </div>
+      <div class="picks">
+        <article class="pick">
+          <span class="pick-tag">都市情感</span>
+          <h3>职场与家庭双线并进</h3>
+          <p>这类泰剧常把办公室关系与家庭矛盾放在同一叙事里，人物动机清楚，适合喜欢慢热铺陈的观众。</p>
+          <div class="meta">适合人群：偏爱写实对白的观众</div>
+        </article>
+        <article class="pick">
+          <span class="pick-tag">青春校园</span>
+          <h3>校园群像与成长线</h3>
+          <p>以学生时代的友情与选择为核心，节奏轻快，单集信息量适中，适合连续观看。</p>
+          <div class="meta">适合人群：想轻松追完一部剧</div>
+        </article>
+        <article class="pick">
+          <span class="pick-tag">悬疑反转</span>
+          <h3>短篇结构与集中伏笔</h3>
+          <p>集数相对紧凑，线索集中在前半程埋设，追剧时更适合一次看两到三集以保持连贯。</p>
+          <div class="meta">适合人群：喜欢推理与复盘</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="browse">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">剧集分类</div>
+        <h2 class="sec-title">按题材筛选，缩小选择范围</h2>
+        <p class="sec-desc">先用题材标签过滤，再用关键词搜索剧名或演员名。泰剧网的分类以观众熟悉的类型词为主，避免绕弯。</p>
+      </div>
+
+      <div class="tools">
+        <label for="q">搜索剧名或演员</label>
+        <input type="search" id="q" placeholder="例如：校园、悬疑、家庭" autocomplete="off">
+      </div>
+
+      <div class="chips" id="chips" role="group" aria-label="题材筛选">
+        <button class="chip active" data-cat="all" type="button">全部</button>
+        <button class="chip" data-cat="都市" type="button">都市情感</button>
+        <button class="chip" data-cat="校园" type="button">青春校园</button>
+        <button class="chip" data-cat="悬疑" type="button">悬疑反转</button>
+        <button class="chip" data-cat="家庭" type="button">家庭伦理</button>
+        <button class="chip" data-cat="古装" type="button">古装年代</button>
+      </div>
+
+      <div class="list" id="list" style="margin-top:18px;">
+        <article class="item" data-cat="都市" data-text="都市情感 职场 家庭 双线">
+          <span class="item-mark" aria-hidden="true">都</span>
+          <div>
+            <h3>都市情感 · 双线叙事</h3>
+            <p>职场线与家庭线交替推进，适合关注人物关系变化的观众。</p>
+            <div class="meta">类型：都市情感</div>
+          </div>
+        </article>
+        <article class="item" data-cat="校园" data-text="青春校园 群像 成长">
+          <span class="item-mark" aria-hidden="true">校</span>
+          <div>
+            <h3>青春校园 · 群像成长</h3>
+            <p>围绕学生时代的友情与选择展开，节奏轻快，适合连续观看。</p>
+            <div class="meta">类型：青春校园</div>
+          </div>
+        </article>
+        <article class="item" data-cat="悬疑" data-text="悬疑反转 短篇 伏笔">
+          <span class="item-mark" aria-hidden="true">悬</span>
+          <div>
+            <h3>悬疑反转 · 短篇结构</h3>
+            <p>伏笔集中在前半程，线索回收较密，适合一次看多集。</p>
+            <div class="meta">类型：悬疑反转</div>
+          </div>
+        </article>
+        <article class="item" data-cat="家庭" data-text="家庭伦理 代际 冲突">
+          <span class="item-mark" aria-hidden="true">家</span>
+          <div>
+            <h3>家庭伦理 · 代际冲突</h3>
+            <p>以家庭内部的分歧为主线，对白密度高，适合慢看不快进。</p>
+            <div class="meta">类型：家庭伦理</div>
+          </div>
+        </article>
+        <article class="item" data-cat="古装" data-text="古装年代 服饰 场景">
+          <span class="item-mark" aria-hidden="true">古</span>
+          <div>
+            <h3>古装年代 · 场景考究</h3>
+            <p>服饰与场景是主要看点，叙事节奏偏稳，适合周末补剧。</p>
+            <div class="meta">类型：古装年代</div>
+          </div>
+        </article>
+        <article class="item" data-cat="都市" data-text="都市情感 职场 成长">
+          <span class="item-mark" aria-hidden="true">职</span>
+          <div>
+            <h3>都市情感 · 职场成长</h3>
+            <p>从新人视角切入，人物成长线清晰，适合初次接触泰剧的观众。</p>
+            <div class="meta">类型：都市情感</div>
+          </div>
+        </article>
+        <div class="empty" id="empty" hidden>没有匹配的剧集，换一个关键词或题材试试。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">追剧路径</div>
+        <h2 class="sec-title">从一部剧开始的三个步骤</h2>
+        <p class="sec-desc">泰剧网把找剧拆成可执行的顺序，减少在题材之间反复跳转的时间。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide">
+          <div class="step">第一步</div>
+          <h3>先定类型</h3>
+          <p>明确自己这次想看都市、校园还是悬疑，用分类标签先把范围收窄到一类，再看具体剧目。</p>
+        </article>
+        <article class="guide">
+          <div class="step">第二步</div>
+          <h3>再看节奏</h3>
+          <p>短篇适合集中观看，群像剧适合每天两集。按可支配时间挑集数结构，比按热度挑更省心。</p>
+        </article>
+        <article class="guide">
+          <div class="step">第三步</div>
+          <h3>顺着演员延伸</h3>
+          <p>看完一部后，用主演名在站内继续搜索，往往能找到风格相近的下一部，追剧清单自然接续。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="prose-box">
+        <h2>泰剧网在做什么</h2>
+        <p>泰剧网面向华语地区的泰剧观众，把分散的剧目信息按题材、节奏和观看场景重新组织。很多观众打开泰剧网时并没有明确目标，只是想知道最近有哪些类型可看、从哪一部开始比较合适，因此站内的栏目以“帮你做选择”为主，而不是堆叠大量剧名。</p>
+        <p>在内容组织上，泰剧网先给出类型标签，再补上节奏与适合人群的说明。都市情感类偏重人物关系与对白，青春校园类节奏轻快、单集信息量适中，悬疑反转类线索集中、适合连续观看。这样的划分让观众在比较剧目时有一致的参照，而不是只凭海报判断。</p>
+        <h3>信息呈现的原则</h3>
+        <ul>
+          <li>分类使用观众熟悉的类型词，不造生僻标签。</li>
+          <li>剧目说明只描述类型与观看节奏，不夸大评价。</li>
+          <li>搜索同时支持剧名与演员名，减少跳转次数。</li>
+          <li>页面内容与筛选逻辑一致，筛选结果即时可见。</li>
+        </ul>
+        <h3>适合怎样的观看习惯</h3>
+        <p>如果你习惯先看两集再决定是否追完，可以从悬疑类入手，短篇结构的剧集更容易判断；如果你更看重日常陪伴感，都市情感与家庭伦理类会更贴合。泰剧网不预设唯一答案，只把差异讲清楚，让选择回到观众自己手里。</p>
+        <p>后续泰剧网会继续补充剧目条目与类型说明，保持分类与描述的一致。站内所有筛选与搜索均在本页直接生效，无需跳转即可看到结果。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <div class="foot-brand">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f2b544"/>
+            <path d="M24 18h16a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4z" fill="#1b2a4a"/>
+            <path d="M29 26l11 6-11 6z" fill="#f2b544"/>
+          </svg>
+          <span>泰剧网</span>
+        </div>
+        <p class="foot-note">泰剧网提供泰剧分类浏览与追剧路径说明，帮助观众按题材与节奏找到合适的剧目。站内搜索与筛选在本页直接运行。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#picks">新剧精选</a>
+        <a href="#browse">剧集分类</a>
+        <a href="#guide">追剧路径</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </div>
+    <div class="copyright">© 泰剧网 · 页面内容以类型与观看节奏说明为主</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('#chips .chip');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#list .item'));
+  var input = document.getElementById('q');
+  var empty = document.getElementById('empty');
+  var currentCat = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(it){
+      var catOk = currentCat === 'all' || it.getAttribute('data-cat') === currentCat;
+      var text = (it.getAttribute('data-text') || '') + ' ' + it.textContent;
+      var kwOk = !kw || text.toLowerCase().indexOf(kw) !== -1;
+      var ok = catOk && kwOk;
+      it.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    empty.hidden = shown !== 0;
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      currentCat = c.getAttribute('data-cat');
+      apply();
+    });
+  });
+  input.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+</html>
